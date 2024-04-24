@@ -34,7 +34,20 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           dotnet build --configuration Release --output ./output
           popd
-      
+        
+      - name: 'Install NuGet Packages'
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          dotnet restore
+          popd
+  
+      - name: 'Build Project'  # Update step name for clarity
+        shell: pwsh
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          dotnet build --configuration Release --output ./output
+          popd
+  
       - name: Login to Azure
         uses: azure/login@v1
         with:
