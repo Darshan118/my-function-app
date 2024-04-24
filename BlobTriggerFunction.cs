@@ -15,6 +15,7 @@ namespace AzureFunctionAppBlob
 		public void Run([BlobTrigger("anchortransform/anchordata.json", Connection = "BlobStorageConnectionString")] Stream myBlob, string name, ILogger log)
 		{
 			log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+			log.LogWarning("You are ok!");
 		}
 	}
 }
