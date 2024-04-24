@@ -1,9 +1,11 @@
 using System;
 using System.IO;
+using System.Net.NetworkInformation;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Blob;
+
 
 namespace AzureFunctionAppBlob
 {
