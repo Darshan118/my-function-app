@@ -6,12 +6,12 @@ using Microsoft.Extensions.Logging;
 
 namespace AzureFunctionAppBlob
 {
-    public class BlobTriggerFunction
+	public class BlobTriggerFunction
 	{
-        [FunctionName("BlobTriggerFunction")]
-        public void Run([BlobTrigger("anchortransform/anchordata.json", Connection = "BlobStorageConnectionString")]Stream myBlob, string name, ILogger log)
-        {
-            log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
-        }
-    }
+		[FunctionName("BlobTriggerFunction")]
+		public void Run([BlobTrigger("anchortransform/anchordata.json", Connection = "BlobStorageConnectionString")] Stream myBlob, string name, ILogger log)
+		{
+			log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+		}
+	}
 }
